@@ -1,0 +1,80 @@
+{
+    "name": "agelxnash/laravel-queue-payload",
+    "description": "Cross-platform RabbitMQ message format for Laravel microservices with RPC support",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Agel_Nash"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "vladimir-yuldashev/laravel-queue-rabbitmq": "^13.3|^14.0",
+        "illuminate/queue": "^10.0|^11.0|^12.0",
+        "illuminate/contracts": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5|^11.0",
+        "orchestra/testbench": "^8.22|^9.0|^10.0",
+        "roave/security-advisories": "dev-latest",
+        "phpstan/phpstan": "^2.0",
+        "squizlabs/php_codesniffer": "^4.0",
+        "slevomat/coding-standard": "^8.27",
+        "laravel/pint": "^1.24",
+        "larastan/larastan": "^3.0",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "tomasvotruba/type-coverage": "^2.0",
+        "tomasvotruba/cognitive-complexity": "^1.0",
+        "canvural/larastan-strict-rules": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AgelxNash\\LaravelQueuePayload\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AgelxNash\\LaravelQueuePayload\\Tests\\": "tests/"
+        }
+    },
+    "suggest": {
+        "brainmaestro/composer-git-hooks": "Git Hooks for pre-commit checks"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AgelxNash\\LaravelQueuePayload\\ServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "analitics:phpstan": "@php -d memory_limit=-1 vendor/bin/phpstan analyse --memory-limit=-1",
+        "app:check:phpcs": "@php vendor/bin/phpcs -s -p --no-cache",
+        "app:fix:phpcbf": "@php vendor/bin/phpcbf -p",
+        "app:check:pint": "@php vendor/bin/pint --test -vvv",
+        "app:fix:pint": "@php vendor/bin/pint -vvv",
+        "test": [
+            "@php vendor/bin/phpunit"
+        ],
+        "test:integration": [
+            "@php vendor/bin/phpunit --testsuite Integration"
+        ]
+    },
+    "scripts-descriptions": {
+        "app:check:phpcs": "Проверить стилистику кода через PHP CodeSniffer",
+        "app:fix:phpcbf": "Исправить стилистику кода через PHP Code Beautifier",
+        "app:check:pint": "Проверить стилистику кода через Pint",
+        "app:fix:pint": "Исправить стилистику кода через Pint"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "conflict": {
+        "symplify/phpstan-rules": ">=12.5.0"
+    }
+}

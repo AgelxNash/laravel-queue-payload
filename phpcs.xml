@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="KD">
+    <description>The KD coding standard.</description>
+
+    <arg name="colors"/>
+    <arg name="extensions" value="php" />
+    <arg name="basepath" value="." />
+    <arg name="tab-width" value="4"/>
+
+    <file>src/</file>
+
+    <rule ref="PSR12"/>
+</ruleset>
